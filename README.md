@@ -31,7 +31,7 @@ npm run test:e2e
 
 ## HTTPS 静态部署（推荐 GitHub Pages）
 
-本次没有发布到外部服务。项目已提供可手动触发的 GitHub Actions 部署工作流。
+已部署到 GitHub Pages：[打开 SkinLog](https://rainy-one.github.io/skinlog/)。仓库为 [Rainy-One/skinlog](https://github.com/Rainy-One/skinlog)，源码公开；个人记录和照片仍仅保存在设备中。后续修改通过手动触发 GitHub Actions 工作流发布。
 
 仅使用 iPhone 也可以操作：
 

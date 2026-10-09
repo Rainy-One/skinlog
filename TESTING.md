@@ -26,6 +26,12 @@
   - 模拟QuotaExceededError时明确报错并保留输入，恢复存储后重试成功；修改周期35天日期正确、新周期保留历史。
   - 实际JSON/CSV文件下载、390px手机页面无横向溢出、深色模式；已人工查看浏览器截图（artifacts目录）。
 
+## GitHub Pages 实际部署验证
+
+2026-10-09：GitHub Actions 构建与发布成功。正式地址为 https://rainy-one.github.io/skinlog/ 。已通过启用TLS验证的HTTPS请求确认首页、JS、CSS、manifest.webmanifest与sw.js全部返回200；Manifest的start_url与scope均为相对路径，display为standalone。
+
+线上浏览器端到端检查因云端Chromium未信任环境代理CA而未完成；未关闭TLS验证，不能据此声称线上浏览器保存与离线测试通过。本地生产构建的6项浏览器测试仍已通过。真实设备请按下面列表验证。
+
 ## 必须在真实 iPhone Safari 人工验证
 
 1. 用最终HTTPS地址“分享 → 添加到主屏幕”，从图标启动，刘海与底部安全区域。
@@ -39,6 +45,6 @@
 
 ## 尚未执行
 
-真实iPhone Safari和主屏幕模式、WebKit浏览器自动化、真实相机、HEIC解码、系统存储回收、300MB备份压力测试、最终HTTPS部署环境测试。没有假定上述项目通过。应用更新机制已配置，但没有用两个实际发布版本验证升级。
+真实iPhone Safari和主屏幕模式、WebKit浏览器自动化、真实相机、HEIC解码、系统存储回收、300MB备份压力测试、线上浏览器完整端到端测试（HTTPS静态资源检查已通过）。没有假定上述项目通过。应用更新机制已配置，但没有用两个实际发布版本验证升级。
 
 照片不是医学检测，测试只验证保存、查看和数据完整性。离线缓存和IndexedDB不保证永久保留，完整ZIP备份仍是用户长期保存数据的主要方式。
